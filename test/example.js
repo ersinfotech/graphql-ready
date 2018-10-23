@@ -27,7 +27,6 @@ const api = {
 const resolver = {
     Query: {
         groups () {
-            console.log('abc')
             return {count: 2, data: [{userId: 'userId'}]}
         },
     },
