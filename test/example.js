@@ -13,15 +13,19 @@ type Groups {
 }
 
 type Query {
+    error: JSON
     echo(message: JSON!): JSON
     groups: Groups
 }
 `
 
 const api = {
+    error () {
+        throw new Error('error happend')
+    },
     echo ({message}) {
         return message
-    }
+    },
 }
 
 const resolver = {
