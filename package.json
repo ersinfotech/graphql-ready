@@ -4,7 +4,7 @@
   "description": "make graphql ready for start",
   "main": "lib/index.js",
   "scripts": {
-    "test": "node test/example.js"
+    "start": "node-dev test/example.js"
   },
   "repository": {
     "type": "git",
@@ -18,12 +18,14 @@
   },
   "homepage": "https://github.com/uxnow/graphql-ready#readme",
   "dependencies": {
-    "express-graphql": "^0.7.1",
-    "graphql": "^14.0.2",
-    "graphql-tools": "^4.0.3",
-    "graphql-type-json": "^0.2.1"
+    "express-graphql": "^0.8.0",
+    "graphql": "^14.4.1",
+    "graphql-tools": "^4.0.5",
+    "graphql-type-json": "^0.3.0"
   },
   "devDependencies": {
-    "express": "^4.16.3"
+    "express": "^4.17.1",
+    "on-finished": "^2.3.0",
+    "node-dev": "^4.0.0"
   }
 }

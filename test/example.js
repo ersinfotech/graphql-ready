@@ -1,6 +1,5 @@
 
 const schema = `
-scalar JSON
 
 type Group {
     userId: String
@@ -46,7 +45,16 @@ const {
 } = require('..')
 
 const express = require('express')
+const onFinished = require('on-finished')
+
+const red = (req, res, next) => {
+    onFinished(res, () => {
+        console.log(req.baseUrl)
+    })
+    next()
+}
 
 express()
+.use(red)
 .use(graphiql({schema, api, resolver}))
 .listen(process.env.PORT || 3000)
