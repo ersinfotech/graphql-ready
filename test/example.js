@@ -49,7 +49,7 @@ const onFinished = require('on-finished')
 
 const red = (req, res, next) => {
     onFinished(res, () => {
-        console.log(req.baseUrl)
+        console.log(req.graphqlUrl)
     })
     next()
 }
