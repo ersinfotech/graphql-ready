@@ -19,8 +19,7 @@
   "homepage": "https://github.com/uxnow/graphql-ready#readme",
   "devDependencies": {
     "express": "^4.18.1",
-    "node-dev": "^7.4.3",
-    "on-finished": "^2.4.1"
+    "node-dev": "^7.4.3"
   },
   "dependencies": {
     "@graphql-tools/schema": "^8.3.11",

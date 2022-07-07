@@ -45,10 +45,10 @@ const {
 } = require('..')
 
 const express = require('express')
-const onFinished = require('on-finished')
+const { finished } = require('stream')
 
 const red = (req, res, next) => {
-    onFinished(res, () => {
+    finished(res, () => {
         console.log(req.graphqlUrl)
     })
     next()
