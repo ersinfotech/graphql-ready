@@ -56,5 +56,6 @@ const red = (req, res, next) => {
 
 express()
 .use(red)
+.use(express.json())
 .use(graphiql({schema, api, resolver}))
 .listen(process.env.PORT || 3000)
