@@ -23,6 +23,7 @@ const api = {
         throw new Error('error happend')
     },
     echo ({message}) {
+        console.log({message})
         return message
     },
 }
