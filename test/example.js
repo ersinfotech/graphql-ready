@@ -1,4 +1,3 @@
-
 const schema = `
 
 type Group {
@@ -19,44 +18,42 @@ type Query {
 `
 
 const api = {
-    error () {
-        throw new Error('error happend')
-    },
-    echo ({message}) {
-        console.log({message})
-        return message
-    },
+  error() {
+    throw new Error('error happend')
+  },
+  echo({ message }) {
+    console.log({ message })
+    return message
+  },
 }
 
 const resolver = {
-    Query: {
-        groups () {
-            return {count: 2, data: [{userId: 'userId'}]}
-        },
+  Query: {
+    groups() {
+      return { count: 2, data: [{ userId: 'userId' }] }
     },
-    Group: {
-        userName (group) {
-            return `${group.userId}-userName`
-        }
+  },
+  Group: {
+    userName(group) {
+      return `${group.userId}-userName`
     },
+  },
 }
 
-const {
-    graphiql,
-} = require('..')
+const { graphiql } = require('..')
 
 const express = require('express')
 const { finished } = require('stream')
 
 const red = (req, res, next) => {
-    finished(res, () => {
-        console.log(req.graphqlUrl)
-    })
-    next()
+  finished(res, () => {
+    console.log(req.graphqlUrl)
+  })
+  next()
 }
 
 express()
-.use(red)
-.use(express.json())
-.use(graphiql({schema, api, resolver}))
-.listen(process.env.PORT || 3000)
+  .use(red)
+  .use(express.json())
+  .use(graphiql({ schema, api, resolver }))
+  .listen(process.env.PORT || 3000)
