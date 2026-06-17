@@ -44,11 +44,15 @@ const { graphiql } = require('..')
 
 const express = require('express')
 
+const onstart = async (item1, item2) => {
+  console.log('onstart', { item1, item2 })
+}
+
 const onfinish = async (item1, item2) => {
-  console.log({ item1, item2 })
+  console.log('onfinish', { item1, item2 })
 }
 
 express()
   .use(express.json())
-  .use(graphiql({ schema, api, resolver, onfinish }))
+  .use(graphiql({ schema, api, resolver, extensions: { onstart, onfinish } }))
   .listen(process.env.PORT || 3000)
