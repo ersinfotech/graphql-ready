@@ -1,6 +1,6 @@
 {
   "name": "graphql-ready",
-  "version": "8.0.1",
+  "version": "8.0.2",
   "description": "make graphql ready for start",
   "main": "lib/index.js",
   "scripts": {
