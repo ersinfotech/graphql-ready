@@ -43,17 +43,12 @@ const resolver = {
 const { graphiql } = require('..')
 
 const express = require('express')
-const { finished } = require('stream')
 
-const red = (req, res, next) => {
-  finished(res, () => {
-    console.log(req.graphqlUrl)
-  })
-  next()
+const onfinish = async (item1, item2) => {
+  console.log({ item1, item2 })
 }
 
 express()
-  .use(red)
   .use(express.json())
-  .use(graphiql({ schema, api, resolver }))
+  .use(graphiql({ schema, api, resolver, onfinish }))
   .listen(process.env.PORT || 3000)
