@@ -46,10 +46,12 @@ const express = require('express')
 
 const onstart = async (item1, item2) => {
   console.log('onstart', { item1, item2 })
+  return { start: true }
 }
 
 const onfinish = async (item1, item2) => {
   console.log('onfinish', { item1, item2 })
+  return { finish: true }
 }
 
 express()
