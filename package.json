@@ -4,7 +4,7 @@
   "description": "make graphql ready for start",
   "main": "lib/index.js",
   "scripts": {
-    "start": "tsx watch test/example.js"
+    "start": "node --watch test/example.js"
   },
   "repository": {
     "type": "git",
@@ -18,8 +18,7 @@
   },
   "homepage": "https://github.com/uxnow/graphql-ready#readme",
   "devDependencies": {
-    "express": "^5.1.0",
-    "tsx": "^4.20.3"
+    "express": "^5.1.0"
   },
   "dependencies": {
     "@graphql-tools/schema": "^10.0.3"
